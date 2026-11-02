@@ -16,6 +16,8 @@ data/*
 !data/.gitkeep
 models/*
 !models/.gitkeep
+src/*
+!src/.gitkeep
 
 # Cache PyTorch / HuggingFace
 .cache/
