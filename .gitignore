@@ -1,0 +1,31 @@
+# Environnement
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Données et modèles (garder la structure)
+data/*
+!data/.gitkeep
+models/*
+!models/.gitkeep
+
+# Cache PyTorch / HuggingFace
+.cache/
+
+# Logs et sorties
+*.log
+wandb/
+runs/
+outputs/
+
+# OS
+.DS_Store
+Thumbs.db

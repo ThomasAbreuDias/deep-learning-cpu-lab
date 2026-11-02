@@ -1,0 +1,29 @@
+services:
+  lab:
+    build:
+      context: .
+      args:
+        LAB_UID: ${LAB_UID:-1000}
+        LAB_GID: ${LAB_GID:-1000}
+    image: ia-lab:cpu
+    ports:
+      - "127.0.0.1:${JUPYTER_PORT:-8888}:8888"
+    environment:
+      JUPYTER_TOKEN: ${JUPYTER_TOKEN:?JUPYTER_TOKEN must be set in .env}
+    volumes:
+      - ./:/workspace
+    init: true
+    shm_size: 2g
+    mem_limit: ${LAB_MEM_LIMIT:-24g}
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c",
+        "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8888/api')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
