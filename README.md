@@ -23,7 +23,6 @@ docker compose exec lab jupyter lab list
 ```bash
 git clone https://github.com/ThomasAbreuDias/deep-learning-cpu-lab.git
 cd deep-learning-cpu-lab
-mkdir -p src
 ```
 
 Prérequis : Docker et Docker Compose, avec un utilisateur autorisé à lancer `docker`.
