@@ -1,4 +1,4 @@
-# ia-lab — Environnement Docker pour les TP de deep learning
+# ia-lab — Environnement Docker pour pratiquer les réseau de neurones  ( Machine/Deep learning)
 
 Environnement JupyterLab conteneurisé avec PyTorch CPU, scikit-learn et les bibliothèques de visualisation.
 
